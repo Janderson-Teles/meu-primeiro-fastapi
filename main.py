@@ -19,7 +19,7 @@ def listar_usuarios():
 def buscar_usuario(usuario_id: int):
     for usuario in usuarios_db:
         return usuario
-    raise HTTstPException(status_code=404, detail= "Usuário não encontrado")
+    raise HTTPException(status_code=404, detail= "Usuário não encontrado")
 
 @app.post("/usuarios")
 def adicionar_usuario(usuario: User):
