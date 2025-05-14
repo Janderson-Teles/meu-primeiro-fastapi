@@ -6,22 +6,33 @@ app = FastAPI()
 
 class User(BaseModel):
     id: int
-    nome: str
+    name: str
     email: str
+
+users = []
+@app.post("/users/", response_model=User)
+def create_user(user: User):
+    users.append(user)
+    return user
+
+@app.get("/users/", response_model=list[User])
+def read_users():
+    return users
+
+@app.put("/users/{user_id}", response_model=User)
+def update_user(user_id: int, updated_user: User):
+    for index, user in enumerate(users):
+        if user.id == user_id:
+            users[index] = update_user
+            return update_user
+        raise HTTPException(status_code=404, detail="User not found")
+
+@app.delete("/users/{user_id}")
+def delete_user(user_id: int):
+    for index, user in enumerate(users):
+        if user.id == user_id:
+            users.pop(index)
+            return {"detail": "User deleted"}
+    raise HTTPException(status_code=404, detail="User not found")
+
     
-usuarios_db: list[User] = []
-
-@app.get("usuario")
-def listar_usuarios():
-    return usuarios_db
-
-@app.get("/usuarios/{usuario_id}")
-def buscar_usuario(usuario_id: int):
-    for usuario in usuarios_db:
-        return usuario
-    raise HTTPException(status_code=404, detail= "Usuário não encontrado")
-
-@app.post("/usuarios")
-def adicionar_usuario(usuario: User):
-    usuarios_db.append(usuario)
-    return {"mensagem": "USuário adicionado com sucesso"}
