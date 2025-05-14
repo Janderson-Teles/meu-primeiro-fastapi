@@ -1,10 +1,10 @@
-#  FastApi - API Simples de Usuários 
+#  Meu primeiro FastAPI 
 
-Uma API simples criada com FastAPI para listar, Cadastrar e Buscar usuários.
+API simples de cadastro de usuários desenvolvida com FastAPI, realizando operações de CRUD (Create, Read, Update, Delete). Projeto em desenvolvimento para fins de estudo e portfólio.
 
 ## 🚀 Tecnologias usuadas
 
-- Python
+- Python 3.12
 - FastAPI
 - Uvicorn
 
@@ -13,3 +13,4 @@ Uma API simples criada com FastAPI para listar, Cadastrar e Buscar usuários.
 1 . Clone o repositório:
 ```bash
 git clone https:github.com/janderson-Teles/fastapi-users-api
+cd meu-primeiro-fastapi
