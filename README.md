@@ -6,7 +6,7 @@ Uma API simples criada com FastAPI para listar, Cadastrar e Buscar usuários.
 
 - Python
 - FastAPI
-- Unicorn
+- Uvicorn
 
 ## Como executar
 
