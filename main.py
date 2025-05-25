@@ -23,9 +23,9 @@ def read_users():
 def update_user(user_id: int, updated_user: User):
     for index, user in enumerate(users):
         if user.id == user_id:
-            users[index] = update_user
+            users[index] = updated_user
             return update_user
-        raise HTTPException(status_code=404, detail="User not found")
+    raise HTTPException(status_code=404, detail="User not found")
 
 @app.delete("/users/{user_id}")
 def delete_user(user_id: int):
@@ -34,5 +34,10 @@ def delete_user(user_id: int):
             users.pop(index)
             return {"detail": "User deleted"}
     raise HTTPException(status_code=404, detail="User not found")
+
+@app.get("/")
+def root():
+    return {"message": "API FastAPI funcionando!"}
+
 
     
