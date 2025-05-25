@@ -1,16 +1,26 @@
-#  Meu primeiro FastAPI 
+# Meu Primeiro Projeto com FastAPI 🚀
 
-API simples de cadastro de usuários desenvolvida com FastAPI, realizando operações de CRUD (Create, Read, Update, Delete). Projeto em desenvolvimento para fins de estudo e portfólio.
+Uma API REST simples desenvolvida com FastAPI para gerenciar usuários. Este projeto foi criado com fins educacionais, como parte dos meus estudos em desenvolvimento backend com Python.
 
-## 🚀 Tecnologias usuadas
+## Funcionalidades
 
-- Python 3.12
+- Criar usuário (POST `/users/`)
+- Listar usuários (GET `/users/`)
+- Atualizar usuário (PUT `/users/{user_id}`)
+- Deletar usuário (DELETE `/users/{user_id}`)
+- Acesso automático à documentação: `http://localhost:8000/docs`
+
+## Tecnologias
+
+- Python 3.12+
 - FastAPI
+- Pydantic
 - Uvicorn
 
-## Como executar
+## Como rodar o projeto
 
-1 . Clone o repositório:
+1. Clone o repositório:
+
 ```bash
-git clone https:github.com/janderson-Teles/fastapi-users-api
+git clone https://github.com/Janderson-Teles/meu-primeiro-fastapi.git
 cd meu-primeiro-fastapi
